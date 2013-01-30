@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+  <Item>
+    <Name>今日行情</Name>
+    <Url>http://image.cngold.org/chart/gold/goldcny.gif</Url>
+    <FileName>today.gif</FileName>
+    <RefreshRate>1</RefreshRate>
+    <RefreshUnits>分</RefreshUnits>
+  </Item>
+  <Item>
+    <Name>一年行情</Name>
+    <Url>http://image.cngold.org/chart/gold/gold_technic_1year.gif</Url>
+    <FileName>oneYear.gif</FileName>
+    <RefreshRate>1</RefreshRate>
+    <RefreshUnits>日</RefreshUnits>
+  </Item>
+  <Item>
+    <Name>两年行情</Name>
+    <Url>http://image.cngold.org/chart/gold/gold_technic_2year.gif</Url>
+    <FileName>twoYears.gif</FileName>
+    <RefreshRate>1</RefreshRate>
+    <RefreshUnits>月</RefreshUnits>
+  </Item>
+  <Item>
+    <Name>五年行情</Name>
+    <Url>http://image.cngold.org/chart/gold/gold_technic_5year.gif</Url>
+    <FileName>fiveYears.gif</FileName>
+    <RefreshRate>1</RefreshRate>
+    <RefreshUnits>月</RefreshUnits>
+  </Item>
+  <Item>
+    <Name>十年行情</Name>
+    <Url>http://image.cngold.org/chart/gold/gold_technic_10year.gif</Url>
+    <FileName>tenYears.gif</FileName>
+    <RefreshRate>1</RefreshRate>
+    <RefreshUnits>月</RefreshUnits>
+  </Item>
+</Items>

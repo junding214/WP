@@ -1,0 +1,67 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="GoldMarket.GoldMarket"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape"  Orientation="Portrait"
+    xmlns:my="clr-namespace:ImageTools.Controls;assembly=ImageTools.Controls"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot 是包含所有页面内容的根网格-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--枢轴控件-->
+        <controls:Pivot Title="黄金行情" Name="pivo" SelectionChanged="Pivot_SelectionChanged" FontWeight="Bold" Foreground="#FFEBEB12" FontSize="24">
+            <!--枢轴项一-->
+            <controls:PivotItem Name="TodayHQ">
+                <controls:PivotItem.Header>
+                    <TextBlock Text="今日行情" FontSize="40"  />
+                </controls:PivotItem.Header>
+                <Grid>
+                    <my:AnimatedImage  Name="today" Stretch="Uniform" />
+                </Grid>
+            </controls:PivotItem>
+            <controls:PivotItem  Name="OneYearHQ"   >
+                <controls:PivotItem.Header>
+                    <TextBlock Text="一年行情"  FontSize="40"  />
+                </controls:PivotItem.Header>
+                <Grid>
+                    <my:AnimatedImage  Name="oneYear" Stretch="Uniform"/>
+                </Grid>
+            </controls:PivotItem>
+            <controls:PivotItem  Name="TwoYearsHQ"  >
+                <controls:PivotItem.Header>
+                    <TextBlock Text="两年行情"  FontSize="40"  />
+                </controls:PivotItem.Header>
+                <Grid>
+                    <my:AnimatedImage  Name="twoYears" Stretch="Uniform"/>
+                </Grid>
+            </controls:PivotItem>
+            <controls:PivotItem  Name="FiveYearsHQ"   >
+                <controls:PivotItem.Header>
+                    <TextBlock Text="五年行情"  FontSize="40"  />
+                </controls:PivotItem.Header>
+                <Grid>
+                    <my:AnimatedImage  Name="fiveYears" Stretch="Uniform"/>
+                </Grid>
+            </controls:PivotItem>
+            <controls:PivotItem   Name="TenYearsHQ"   >
+                <controls:PivotItem.Header>
+                    <TextBlock Text="十年行情"  FontSize="40"  />
+                </controls:PivotItem.Header>
+                <Grid>
+                    <my:AnimatedImage  Name="tenYears" Stretch="Uniform"/>
+                </Grid>
+            </controls:PivotItem>
+        </controls:Pivot>
+
+    </Grid>
+    
+</phone:PhoneApplicationPage>
