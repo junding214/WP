@@ -32,14 +32,14 @@ namespace GoldMarket
 
             var items = from student in carMakers.Descendants("Item")
                         select new Item
-                        {
-                            Name = student.Element("Name").Value,
-                            Url = student.Element("Url").Value,
-                            FileName = student.Element("FileName").Value,
-                            RefreshRate = int.Parse(student.Element("RefreshRate").Value),
-                            RefreshUnits = student.Element("RefreshUnits").Value,
-                            DownLoadTime = new DateTime(1900, 01, 01),
-                        };
+                            {
+                                Name = student.Element("Name").Value,
+                                Url = student.Element("Url").Value,
+                                FileName = student.Element("FileName").Value,
+                                RefreshRate = int.Parse(student.Element("RefreshRate").Value),
+                                RefreshUnits = student.Element("RefreshUnits").Value,
+                                DownLoadTime = new DateTime(1900, 01, 01),
+                            };
 
             foreach (Item a in items)
             {
@@ -100,7 +100,8 @@ namespace GoldMarket
             image.UriSource = new Uri(_bindData[index].Url);
             imgContain.Source = image;
 
-            _bindData[index].DownLoadTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, 0);
+            _bindData[index].DownLoadTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
+                                                         DateTime.Now.Hour, DateTime.Now.Minute, 0);
 
         }
 
@@ -114,7 +115,8 @@ namespace GoldMarket
 
             int[] intPre =
                 {
-                    _bindData[index].DownLoadTime.Year, _bindData[index].DownLoadTime.Month, _bindData[index].DownLoadTime.Day, _bindData[index].DownLoadTime.Hour,
+                    _bindData[index].DownLoadTime.Year, _bindData[index].DownLoadTime.Month,
+                    _bindData[index].DownLoadTime.Day, _bindData[index].DownLoadTime.Hour,
                     _bindData[index].DownLoadTime.Minute
                 };
 
