@@ -18,10 +18,10 @@ namespace GoldMarket
         public GoldMarket()
         {
             InitializeComponent();
-            Decoders.AddDecoder<GifDecoder>();
+           Decoders.AddDecoder<GifDecoder>();
             try
             {
-                LoadXlm();
+                LoadXlm(); 
             }
             catch
             {
@@ -96,27 +96,14 @@ namespace GoldMarket
                 }
             }
 
-            //ExtendedImage imgTmp = new ExtendedImage();
-
-            //    imgTmp.UriSource = new Uri("/WaitFor.gif", UriKind.Relative);
-
-            //imgContain.Source = imgTmp;
-
-            // return;
-
-            ExtendedImage image = new ImageTools.ExtendedImage();
-            try
-            {
-                image.UriSource = new Uri(_bindData[index].Url);
-            }
-            catch
-            {
+            if (!Microsoft.Phone.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
                 MessageBox.Show("网络异常！");
-            }
+            ExtendedImage image = new ImageTools.ExtendedImage();
+
+            image.UriSource = new Uri(_bindData[index].Url);
             imgContain.Source = image;
 
-            _bindData[index].DownLoadTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
-                                                         DateTime.Now.Hour, DateTime.Now.Minute, 0);
+            _bindData[index].DownLoadTime = DateTime.Now;
 
         }
 
