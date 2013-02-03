@@ -12,6 +12,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Microsoft.Phone.Net.NetworkInformation;
+using GoldMarket;
 
 namespace 黄金行情
 {
@@ -28,6 +30,9 @@ namespace 黄金行情
         /// </summary>
         public App()
         {
+
+            
+
             // Global handler for uncaught exceptions. 
             UnhandledException += Application_UnhandledException;
 
@@ -93,16 +98,28 @@ namespace 黄金行情
             }
         }
 
-        // 出现未处理的异常时执行的代码
+        //// 出现未处理的异常时执行的代码
+        //private void Application_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
+        //{
+        //    if (System.Diagnostics.Debugger.IsAttached)
+        //    {
+        //        // 出现未处理的异常；强行进入调试器
+        //        System.Diagnostics.Debugger.Break();
+        //    }
+        //}
+
         private void Application_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
         {
             if (System.Diagnostics.Debugger.IsAttached)
             {
-                // 出现未处理的异常；强行进入调试器
+                // An unhandled exception has occurred; break into the debugger 
                 System.Diagnostics.Debugger.Break();
             }
+            e.Handled = true;
+            //theException 这是一个静态成员，所以通过类名直接访问。 
+            ErrorPage.Exception = e.ExceptionObject;
+            (RootVisual as Microsoft.Phone.Controls.PhoneApplicationFrame).Source = new Uri("/ErrorPage.xaml", UriKind.Relative);
         }
-
         #region 电话应用程序初始化
 
         // 避免双重初始化
@@ -124,6 +141,8 @@ namespace 黄金行情
 
             // 确保我们未再次初始化
             phoneApplicationInitialized = true;
+
+
         }
 
         // 请勿向此方法中添加任何其他代码

@@ -7,6 +7,7 @@ using ImageTools;
 using ImageTools.IO;
 using ImageTools.IO.Gif;
 using Microsoft.Phone.Controls;
+using System.Windows;
 
 namespace GoldMarket
 {
@@ -18,7 +19,14 @@ namespace GoldMarket
         {
             InitializeComponent();
             Decoders.AddDecoder<GifDecoder>();
-            LoadXlm();
+            try
+            {
+                LoadXlm();
+            }
+            catch
+            {
+                MessageBox.Show("配置信息读取失败！");
+            }
         }
 
         /// <summary>
@@ -97,7 +105,14 @@ namespace GoldMarket
             // return;
 
             ExtendedImage image = new ImageTools.ExtendedImage();
-            image.UriSource = new Uri(_bindData[index].Url);
+            try
+            {
+                image.UriSource = new Uri(_bindData[index].Url);
+            }
+            catch
+            {
+                MessageBox.Show("网络异常！");
+            }
             imgContain.Source = image;
 
             _bindData[index].DownLoadTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
@@ -105,6 +120,11 @@ namespace GoldMarket
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         private bool OutOfTime(int index)
         {
             int[] intNow =
@@ -186,6 +206,9 @@ namespace GoldMarket
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private class Item
         {
             public string Name { get; set; }

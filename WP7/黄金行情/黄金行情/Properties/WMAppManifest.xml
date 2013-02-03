@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
-  <App xmlns="" ProductID="{9ffbf87b-b17a-4a0b-b49c-5e3ac4fc3010}" Title="黄金行情" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="黄金行情 author" Description="Sample description" Publisher="黄金行情">
+  <App xmlns="" ProductID="{9ffbf87b-b17a-4a0b-b49c-5e3ac4fc3010}" Title="黄金行情" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="迈客封" Description="查看实时黄金行情，所有数据来源于网上仅供参考。功能包含24小时黄金行情，1年、2年、5年及10年黄金历史行情。" Publisher="黄金行情" BitsPerPixel="32">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_GAMERSERVICES" />
